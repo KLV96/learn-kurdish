@@ -7,6 +7,7 @@
   margin: -150px;
   float: left;
   perspective: 500px;
+  container-type: inline-size;
 }
 
 .content {
@@ -46,6 +47,18 @@
 
 @media screen and (max-width: 992px) {
   .content {
-    transition: transform 0.1s;
+    transition: none;
   }
+}
+
+p {
+  margin: 0;
+}
+
+.smallerFont {
+  font-size: 0.7em;
+}
+
+.tinyFont {
+  font-size: 0.5em !important;
 }

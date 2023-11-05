@@ -1,5 +1,15 @@
 import Style from "./MemoryCard.module.css";
 
+function getFontStyle(item) {
+  let fontStyle = "";
+  if (item.length >= 14) {
+    fontStyle = Style.tinyFont;
+  } else if (item.length > 9) {
+    fontStyle = Style.smallerFont;
+  }
+  return fontStyle;
+}
+
 function MemoryCard({ item, frontEnglish }) {
   return (
     <>
@@ -7,13 +17,21 @@ function MemoryCard({ item, frontEnglish }) {
         <div class={Style.content}>
           {frontEnglish ? (
             <>
-              <div class={Style.front}>{item.english}</div>
-              <div class={Style.back}>{item.kurmanji}</div>
+              <div class={Style.front}>
+                <p className={getFontStyle(item.english)}>{item.english}</p>
+              </div>
+              <div class={Style.back}>
+                <p className={getFontStyle(item.kurmanji)}>{item.kurmanji}</p>
+              </div>
             </>
           ) : (
             <>
-              <div class={Style.front}>{item.kurmanji}</div>
-              <div class={Style.back}>{item.english}</div>
+              <div class={Style.front}>
+                <p className={getFontStyle(item.kurmanji)}>{item.kurmanji}</p>
+              </div>
+              <div class={Style.back}>
+                <p className={getFontStyle(item.english)}>{item.english}</p>
+              </div>
             </>
           )}
         </div>

@@ -5,17 +5,25 @@ import Button from "./components/Button/Button";
 import { useState } from "react";
 import memoryList from "./vocabs.json";
 
+const numOfVocabs = memoryList.length;
+const initialIndex = Math.floor(Math.random() * numOfVocabs);
+let vocabsViewed = [initialIndex];
+
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [index, setIndex] = useState(initialIndex);
   const [frontEnglish, setFrontEnglish] = useState(false);
-  console.log(memoryList.length);
 
   function nextQuestionHandler() {
-    if (counter >= memoryList.length - 1) {
-      setCounter(0);
-    } else {
-      setCounter(counter + 1);
+    if (vocabsViewed.length >= numOfVocabs) {
+      vocabsViewed = [];
     }
+    let vocabIndex = Math.floor(Math.random() * numOfVocabs);
+    while (vocabsViewed.includes(vocabIndex)) {
+      vocabIndex = Math.floor(Math.random() * numOfVocabs);
+    }
+
+    setIndex(vocabIndex);
+    vocabsViewed.push(vocabIndex);
   }
 
   function changeLanguageHandler() {
@@ -25,11 +33,11 @@ function App() {
 
   return (
     <>
-      <Header />
-      <MemoryCard item={memoryList[counter]} frontEnglish={frontEnglish} />
+      <Header numOfVocabs={numOfVocabs} />
+      <MemoryCard item={memoryList[index]} frontEnglish={frontEnglish} />
       <Button clickHandler={nextQuestionHandler}>Next Vocabulary</Button>
-      <Button clickHandler={changeLanguageHandler} changeLangBtn={true}>
-        Change language
+      <Button clickHandler={changeLanguageHandler} switchLangBtn={true}>
+        Switch language
       </Button>
     </>
   );

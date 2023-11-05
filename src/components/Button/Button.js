@@ -1,9 +1,9 @@
 import Styles from "./Button.module.css";
 
-function Button({ children, clickHandler, changeLangBtn }) {
+function Button({ children, clickHandler, switchLangBtn }) {
   return (
     <div
-      className={`${changeLangBtn ? Styles.changeLangBtnContainer : null}
+      className={`${switchLangBtn ? Styles.switchLangBtnContainer : null}
         ${Styles.buttonContainer}`}
     >
       <button className={Styles.button} onClick={clickHandler}>

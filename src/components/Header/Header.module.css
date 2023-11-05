@@ -10,6 +10,13 @@
   text-align: center;
 }
 
+.numOfVocabs {
+  margin-top: 0px;
+  font-family: "Rocher";
+  color: white;
+  text-align: center;
+}
+
 @font-face {
   font-family: "Rocher";
   src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
