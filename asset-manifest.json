@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/kurmanji-memory-card/static/css/main.f8837dff.css",
-    "main.js": "/kurmanji-memory-card/static/js/main.cb3b260c.js",
+    "main.js": "/kurmanji-memory-card/static/js/main.cd2c2b2b.js",
     "static/js/787.95403883.chunk.js": "/kurmanji-memory-card/static/js/787.95403883.chunk.js",
     "static/media/kurdistan.jpeg": "/kurmanji-memory-card/static/media/kurdistan.ab24820b582d470403f1.jpeg",
     "index.html": "/kurmanji-memory-card/index.html",
     "main.f8837dff.css.map": "/kurmanji-memory-card/static/css/main.f8837dff.css.map",
-    "main.cb3b260c.js.map": "/kurmanji-memory-card/static/js/main.cb3b260c.js.map",
+    "main.cd2c2b2b.js.map": "/kurmanji-memory-card/static/js/main.cd2c2b2b.js.map",
     "787.95403883.chunk.js.map": "/kurmanji-memory-card/static/js/787.95403883.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f8837dff.css",
-    "static/js/main.cb3b260c.js"
+    "static/js/main.cd2c2b2b.js"
   ]
 }
