@@ -3,7 +3,7 @@
   border-width: 5px;
   border-color: #ddd;
   width: 300px;
-  padding: 25px 25px;
+  padding: 25px;
   font-size: 24px;
   color: black;
   text-align: center;
@@ -36,8 +36,26 @@
   padding: 25px 25px;
 }
 
-.choiceBtn:not(.nohover):hover:enabled {
-  background-color: rgb(57, 170, 225);
-  border-color: #aaa;
-  transition: 0.2s;
+@media screen and (min-width: 800px) {
+  .choiceBtn:not(.nohover):hover:enabled {
+    background-color: rgb(57, 170, 225);
+    border-color: #aaa;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .choiceBtn,
+  .choiceBtn:disabled,
+  .choiceBtn[disabled] {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-height: 670px) {
+  .choiceBtn,
+  .choiceBtn:disabled,
+  .choiceBtn[disabled] {
+    padding: 10px;
+  }
 }
