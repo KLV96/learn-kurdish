@@ -13,23 +13,23 @@ function getFontStyle(item) {
 function MemoryCard({ item, frontEnglish }) {
   return (
     <>
-      <div class={Style.card}>
-        <div class={Style.content}>
+      <div className={Style.card}>
+        <div className={Style.content}>
           {frontEnglish ? (
             <>
-              <div class={Style.front}>
+              <div className={Style.front}>
                 <p className={getFontStyle(item.english)}>{item.english}</p>
               </div>
-              <div class={Style.back}>
+              <div className={Style.back}>
                 <p className={getFontStyle(item.kurmanji)}>{item.kurmanji}</p>
               </div>
             </>
           ) : (
             <>
-              <div class={Style.front}>
+              <div className={Style.front}>
                 <p className={getFontStyle(item.kurmanji)}>{item.kurmanji}</p>
               </div>
-              <div class={Style.back}>
+              <div className={Style.back}>
                 <p className={getFontStyle(item.english)}>{item.english}</p>
               </div>
             </>

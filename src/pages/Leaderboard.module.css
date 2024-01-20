@@ -1,0 +1,28 @@
+.outerContainer {
+  display: table;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  height: 60%;
+  width: 100%;
+}
+
+.middleContainer {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.innerContainer {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.innerContainer h1 {
+  text-align: center;
+  background-color: white;
+  display: inline-block;
+  padding: 25px;
+  border: 3px solid black;
+  border-radius: 15px;
+}

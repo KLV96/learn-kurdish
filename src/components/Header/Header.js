@@ -1,7 +1,8 @@
 import Style from "./Header.module.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-function Header({ numOfVocabs }) {
+function Header({ numOfVocabs, questionIndex, totalQuestions }) {
   const [show, setShow] = useState(true);
 
   setTimeout(() => {
@@ -10,9 +11,21 @@ function Header({ numOfVocabs }) {
 
   return (
     <>
+      <Link to="/">
+        <img
+          src={process.env.PUBLIC_URL + "/homeIcon.png"}
+          className={Style.homeIcon}
+          alt="Home icon"
+        />
+      </Link>
       <h1 className={Style.Header}>Learn Kurmanji</h1>
-      {show && (
+      {numOfVocabs && show && (
         <p className={Style.numOfVocabs}>Covers {numOfVocabs} vocabularies</p>
+      )}
+      {questionIndex && (
+        <h1 className={Style.questionCounter}>
+          {questionIndex}/{totalQuestions}
+        </h1>
       )}
     </>
   );

@@ -10,11 +10,28 @@
   text-align: center;
 }
 
+.homeIcon {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  position: absolute;
+}
+
 .numOfVocabs {
   margin-top: 0px;
   font-family: "Rocher";
   color: white;
   text-align: center;
+}
+
+.questionCounter {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 25px;
+  color: rgb(57, 170, 225);
+  font-weight: 800;
 }
 
 @font-face {
