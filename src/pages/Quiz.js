@@ -1,6 +1,7 @@
 import Header from "../components/Header/Header";
 import Style from "./Quiz.module.css";
-import memoryList from "../vocabs.json";
+import kurmanjiVocabList from "../kurmajiVocabs.json";
+import soraniVocabList from "../soraniVocabs.json";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import QuizButton from "../components/QuizButton/QuizButton";
@@ -15,12 +16,17 @@ function QuizPage() {
   const [chosenAnswer, setChosenAnswer] = useState(0);
   const navigate = useNavigate();
   const [contentLoaded, setContentLoaded] = useState(false);
+  const chosenDialect = window.location.pathname.split("/")[2];
+  console.log(chosenDialect);
+
+  const vocabsList =
+    chosenDialect === "kurmanji" ? kurmanjiVocabList : soraniVocabList;
 
   useEffect(() => {
-    quizQuestions = memoryList.sort(() => 0.5 - Math.random()).slice(0, 10);
+    quizQuestions = vocabsList.sort(() => 0.5 - Math.random()).slice(0, 10);
     answersScore = 0;
 
-    quizOptions = memoryList
+    quizOptions = vocabsList
       .sort(() => 0.5 - Math.random())
       .slice(0, 100)
       .map((question) => question.english);
@@ -56,7 +62,7 @@ function QuizPage() {
   const nextQuestion = () => {
     index < quizQuestions.length - 1
       ? setIndex((previousIndexVal) => previousIndexVal + 1)
-      : navigate("/quizResult", {
+      : navigate("quizResult", {
           state: { answersScore, numOfQuestions: quizQuestions.length },
         });
     setChosenAnswer(0);
@@ -82,6 +88,7 @@ function QuizPage() {
       {contentLoaded ? (
         <div>
           <Header
+            chosenDialect={chosenDialect}
             questionIndex={index + 1}
             totalQuestions={quizQuestions.length}
           />
@@ -89,7 +96,7 @@ function QuizPage() {
             <h1 className={Style.question}>
               What does{" "}
               <span className={Style.vocab}>
-                {quizQuestions[index].kurmanji}{" "}
+                {quizQuestions[index].kurdish}{" "}
               </span>
               mean?
             </h1>

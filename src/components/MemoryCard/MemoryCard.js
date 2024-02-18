@@ -21,13 +21,13 @@ function MemoryCard({ item, frontEnglish }) {
                 <p className={getFontStyle(item.english)}>{item.english}</p>
               </div>
               <div className={Style.back}>
-                <p className={getFontStyle(item.kurmanji)}>{item.kurmanji}</p>
+                <p className={getFontStyle(item.kurdish)}>{item.kurdish}</p>
               </div>
             </>
           ) : (
             <>
               <div className={Style.front}>
-                <p className={getFontStyle(item.kurmanji)}>{item.kurmanji}</p>
+                <p className={getFontStyle(item.kurdish)}>{item.kurdish}</p>
               </div>
               <div className={Style.back}>
                 <p className={getFontStyle(item.english)}>{item.english}</p>

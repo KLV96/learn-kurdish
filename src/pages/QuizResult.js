@@ -4,6 +4,8 @@ import Style from "./QuizResult.module.css";
 import { useEffect } from "react";
 
 function QuizResult() {
+  const chosenDialect = window.location.pathname.split("/")[2];
+
   const location = useLocation();
   const percentage = Math.round(
     (location.state.answersScore / location.state.numOfQuestions) * 100
@@ -118,7 +120,7 @@ function QuizResult() {
     <>
       {percentage >= 80 && <canvas id="confetti"></canvas>}
 
-      <Header />
+      <Header chosenDialect={chosenDialect} />
       <div className={Style.quizResultContainer}>
         <h1
           className={`${Style.finalScore} ${

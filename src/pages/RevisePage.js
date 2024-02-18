@@ -3,13 +3,23 @@ import Header from "../components/Header/Header";
 import MemoryCard from "../components/MemoryCard/MemoryCard";
 import Button from "../components/Button/Button";
 import { useState } from "react";
-import memoryList from "../vocabs.json";
-
-const numOfVocabs = memoryList.length;
-const initialIndex = Math.floor(Math.random() * numOfVocabs);
-let vocabsViewed = [initialIndex];
+import kurmanjMemoryList from "../kurmajiVocabs.json";
+import soraniMemoryList from "../soraniVocabs.json";
 
 function RevisePage() {
+  const chosenDialect = window.location.pathname.split("/")[2];
+
+  const vocabsList =
+    chosenDialect === "kurmanji" ? kurmanjMemoryList : soraniMemoryList;
+
+  const numOfVocabs =
+    chosenDialect === "kurmanji"
+      ? kurmanjMemoryList.length
+      : soraniMemoryList.length;
+
+  const initialIndex = Math.floor(Math.random() * numOfVocabs);
+
+  let vocabsViewed = [initialIndex];
   const [index, setIndex] = useState(initialIndex);
   const [frontEnglish, setFrontEnglish] = useState(false);
 
@@ -33,8 +43,8 @@ function RevisePage() {
 
   return (
     <>
-      <Header numOfVocabs={numOfVocabs} />
-      <MemoryCard item={memoryList[index]} frontEnglish={frontEnglish} />
+      <Header numOfVocabs={numOfVocabs} chosenDialect={chosenDialect} />
+      <MemoryCard item={vocabsList[index]} frontEnglish={frontEnglish} />
       <Button clickHandler={nextQuestionHandler}>Next Vocabulary</Button>
       <Button clickHandler={changeLanguageHandler} switchLangBtn={true}>
         Switch language

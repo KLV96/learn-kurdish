@@ -2,7 +2,7 @@ import Style from "./Header.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Header({ numOfVocabs, questionIndex, totalQuestions }) {
+function Header({ chosenDialect, numOfVocabs, questionIndex, totalQuestions }) {
   const [show, setShow] = useState(true);
 
   setTimeout(() => {
@@ -11,14 +11,14 @@ function Header({ numOfVocabs, questionIndex, totalQuestions }) {
 
   return (
     <>
-      <Link to="/">
+      <Link to="../">
         <img
           src={process.env.PUBLIC_URL + "/homeIcon.png"}
           className={Style.homeIcon}
           alt="Home icon"
         />
       </Link>
-      <h1 className={Style.Header}>Learn Kurmanji</h1>
+      <h1 className={Style.Header}>Learn {chosenDialect}</h1>
       {numOfVocabs && show && (
         <p className={Style.numOfVocabs}>Covers {numOfVocabs} vocabularies</p>
       )}
