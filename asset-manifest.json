@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.266fb5fa.css",
-    "main.js": "/static/js/main.6d5c3bbc.js",
-    "static/js/787.3beab46a.chunk.js": "/static/js/787.3beab46a.chunk.js",
-    "static/media/kurdistan.jpeg": "/static/media/kurdistan.ab24820b582d470403f1.jpeg",
-    "index.html": "/index.html",
-    "main.266fb5fa.css.map": "/static/css/main.266fb5fa.css.map",
-    "main.6d5c3bbc.js.map": "/static/js/main.6d5c3bbc.js.map",
-    "787.3beab46a.chunk.js.map": "/static/js/787.3beab46a.chunk.js.map"
+    "main.css": "/learn-kurdish/static/css/main.6c0a46cf.css",
+    "main.js": "/learn-kurdish/static/js/main.efc33b03.js",
+    "static/js/787.3beab46a.chunk.js": "/learn-kurdish/static/js/787.3beab46a.chunk.js",
+    "static/media/kurdistan.jpeg": "/learn-kurdish/static/media/kurdistan.ab24820b582d470403f1.jpeg",
+    "index.html": "/learn-kurdish/index.html",
+    "main.6c0a46cf.css.map": "/learn-kurdish/static/css/main.6c0a46cf.css.map",
+    "main.efc33b03.js.map": "/learn-kurdish/static/js/main.efc33b03.js.map",
+    "787.3beab46a.chunk.js.map": "/learn-kurdish/static/js/787.3beab46a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.266fb5fa.css",
-    "static/js/main.6d5c3bbc.js"
+    "static/css/main.6c0a46cf.css",
+    "static/js/main.efc33b03.js"
   ]
 }
